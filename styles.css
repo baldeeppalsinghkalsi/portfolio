@@ -169,7 +169,8 @@
   /* "Automagic" image grid using no media queries */
   .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    position: center;
+    grid-template-columns: repeat(auto, minmax(320px, 1fr));
     grid-gap: 4rem;
     width: 20%;
     max-width: 1280px;
