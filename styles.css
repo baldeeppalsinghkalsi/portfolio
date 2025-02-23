@@ -162,7 +162,7 @@
   }
   
   @media (max-width: 28.75em) {
-      .projects-section-header {
+    .projects-section-header {
       font-size: 4rem;
     }
   }
@@ -219,7 +219,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover; /* Ensures images maintain aspect ratio and fill space */ /* Optional, to match the grid item */
-  }
+}
 
   
   .project-title {
@@ -227,6 +227,7 @@
     padding: 2rem 0.5rem;
     background: var(--main-gray);
   }
+  
   .btn {
     display: inline-block;
     padding: 1rem 2rem;
