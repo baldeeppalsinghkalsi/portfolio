@@ -152,6 +152,7 @@
     text-align: center;
     padding: 10rem 2rem;
     background: var(--main-blue);
+    overflow: hidden;
   }
   
   .projects-section-header {
@@ -161,33 +162,44 @@
   }
   
   @media (max-width: 28.75em) {
-    .projects-section-header {
+      .projects-section-header {
       font-size: 4rem;
     }
   }
   
-  /* "Automagic" image grid using no media queries */
   .projects-grid {
     display: grid;
-    position: center;
-    grid-template-columns: repeat(auto, minmax(320px, 1fr));
-    grid-gap: 4rem;
-    width: 20%;
-    max-width: 1280px;
-    margin: 0 auto;
-    margin-bottom: 6rem;
+    grid-template-columns: repeat(4, 1fr); /* Always 4 equal columns */
+    gap: 2rem;
+    width: 90%; /* Ensures the grid stays within the screen width */
+    max-width: 1280px; /* Limits overall width */
+    margin: 0 auto 6rem; /* Centers grid and adds bottom spacing */
   }
   
-  @media (max-width: 30.625em) {
-    .projects-section {
-      padding: 6rem 1rem;
-    }
   
+  .projects-grid > li {
+    aspect-ratio: 1 / 1; /* Ensures square shape */
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    background: lightgray;
+    border-radius: 8px;
+  }
+  
+  /* Responsive: 2 columns on tablets */
+  @media (max-width: 900px) {
+    .projects-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  /* Responsive: 1 column on small screens */
+  @media (max-width: 500px) {
     .projects-grid {
       grid-template-columns: 1fr;
     }
   }
-  
+
   .project {
     background: var(--main-gray);
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
@@ -204,16 +216,17 @@
   }
   
   .project-image {
-    height: calc(100% - 6.8rem);
-    width: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures images maintain aspect ratio and fill space */ /* Optional, to match the grid item */
   }
+
   
   .project-title {
     font-size: 2rem;
     padding: 2rem 0.5rem;
+    background: var(--main-gray);
   }
-  
   .btn {
     display: inline-block;
     padding: 1rem 2rem;
